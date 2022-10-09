@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkvexa=self.webpackChunkvexa||[]).push([[134],{3134:(e,u,a)=>{a.r(u),a.d(u,{default:()=>s});var n=a(5893);const s=function(){return(0,n.jsx)("div",{children:"AboutPage"},void 0)}}}]);

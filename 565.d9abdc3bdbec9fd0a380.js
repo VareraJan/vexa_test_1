@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkvexa=self.webpackChunkvexa||[]).push([[565],{565:(e,a,n)=>{n.r(a),n.d(a,{default:()=>s});var r=n(5893);const s=function(){return(0,r.jsx)(r.Fragment,{children:"ProjectsPage"},void 0)}}}]);
