@@ -1,0 +1,108 @@
+- logo in index.html (отображается во вкладке браузера сверху) NOTE пока временный из навбара
+- navigation/MenuBar - адреса ссылок на что ведут?
+- обернуть в предохранитель
+- проверить на всех браузерах после окончания верстки/перед сдачей
+- доступ на эндпойнты сервера или заглушки json ответов
+
+- регистрация только для амбассадоров? какая надпись для названия университета? // Univerity Name !!! Сделать выпадающим списком? 
+
+- auth : проверка email/password (валидация на правила)
+- auth : обработчик ошибок написать (вывод об ошибке пользователю)
+- redux : вынести отдельно типизацию слайсов types.ts
+- editUniversity : ограничение на количество символов в названии университета и локации
+- dashboard => prospects : строка поиска как должна работать? что искать, где/как выводить? Зачем там конпка с плюсиком? Что она делает?
+- dashboard => prospects : переделать иконки удаления студента на враппер с заменой фона при наведении.
+- dashboard : удаление студентов и амбассадоров из списка. После удаления перезапрос страницы? логика если страница последняя и после удаления общее количество страниц меньше(запрос страницы которая после удаления перестает существовать)
+- redux: синхронизировать redux и localStorage
+- dashboard => approvedVideo :  заглушка-оповещение если нет видео  для продтверждения
+- login : восстановление пароля
+- editPageUniversity : проверки и вывод сообщений 
+- editPageUniversity : добавить поле для ввода координат? location
+- editPageUniversity : добавить поле для form(community college, university)
+- editPageUniversity : добавить поле для website
+--- dashboard : вынести функции запроса данных, обновления данных и пагинации в отдельный файл(сделать универсальными)
+- dashboard : объединить компоненты Ambassadors... и переписать их
+- dashboard : объединить компоненты Prospects... и переписать их
+
+
+Типизация для БД
+
+Ambassadors
+{
+  id: number;
+  email: string;
+  firstName: string;
+  lastName: string;
+} 
+
+Univerity
+{
+  id: number;
+  email: string;
+  name: string;
+  location: string;
+  image: string;
+  photos: string[];
+  prospectsCount?: number;
+  ambassadorsCount?: number;
+  approvedVideosCount?: number;
+  type: { duration: string; belonging: string };
+  size: string;
+  admission: string;
+  unique: string;
+  information: string;
+  accomodation: string;
+  phone: string;
+  password: string;
+}
+
+//пример
+{
+  id: 1,
+  email: 'tsu@tsu.ru',
+  name: 'Tomsk University',
+  location: 'Tomsk region',
+  image: 'https://ihde.tsu.ru/wp-content/uploads/2017/01/cropped-logo-02-300x300.png',
+  photos: [
+    'https://www.5top100.ru/upload/iblock/f66/f66c1d8d0556c4cf8464c4487209e0cf_thumb_619d8095bd44a714.jpg',
+  ],
+  prospectsCount: 201,
+  ambassadorsCount: 23,
+  approvedVideosCount: 128,
+  phone: '',
+  unique: '',
+  information: '',
+  type: {
+    belonging: '',
+    duration: '',
+  },
+  size: '',
+  admission: '',
+  accomodation: '',
+};
+
+Students
+{
+  id: number;
+  firstName: string;
+  lastName: string;
+  registrationDate: string;
+  email: string;
+  city: string;
+  status: number;
+  img: string;
+}
+
+Videos
+{
+  id: number;
+  path: string;
+  name: string;
+  date: string;
+  duration: string;
+  category: string;
+  universityId: number;
+  image: string;
+  likes: number;
+  comments: number;
+};
